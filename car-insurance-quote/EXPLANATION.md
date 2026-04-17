@@ -55,7 +55,7 @@ Some things we’d want to do for a real-world launch:
 If you spot a way to make this process better, or want to suggest a change:
 - Open an issue or start a discussion—just say what you’re thinking and why.
 - For bigger changes, explain the benefit and how it’ll help us all.
-- Stick to the same branch/commit style so it’s easy for everyone to follow.
+- Stick to the same branch/commit style so it’s easy for everyone to follow (start branch names with JIRA ticket number).
 
 ---
 
