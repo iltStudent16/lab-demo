@@ -1,7 +1,19 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from quote_logic import calculate_quote
 
-app = Flask(__name__)
+import os
+
+app = Flask(__name__, static_folder='.', static_url_path='')
+@app.route('/')
+def serve_index():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/<path:path>')
+def serve_static(path):
+    # Serve static files (js, css, etc.)
+    if os.path.exists(path):
+        return send_from_directory('.', path)
+    return 'Not Found', 404
 
 @app.route('/api/quote', methods=['POST'])
 def get_quote():
